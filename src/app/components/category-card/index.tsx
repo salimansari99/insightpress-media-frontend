@@ -23,7 +23,7 @@ export default function CategoryCard() {
         `}</style>
         <div className="categorycard-container">
             <p className="brdcrmb">IN SCIENCE / READ TIME3 MINS</p>
-            <a href="">
+            <a href="culture/turpis-egestas-sed-tempus">
             <h3 className="card-ttl">Turpis Egestas Sed Tempus Urna Pharetra</h3>
             <div className="card-img">
                 <img src="/images/s1.webp" alt="" />

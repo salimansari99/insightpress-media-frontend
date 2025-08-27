@@ -9,6 +9,8 @@ export default function HeroSection() {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
+          margin-block: 80px;
+          // background: url('/images/home-hero-image.webp') no-repeat fixed;
         }
 
         .h-l {

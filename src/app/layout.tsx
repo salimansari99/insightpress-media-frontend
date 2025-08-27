@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import Navbar from "@/app/components/navbar";
 import Level2Nav from "./components/level2Nav";
 import Footer from "./components/footer";
+import { AuthProvider } from "./contexts/AuthContext";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -34,12 +35,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ubuntu.className} antialiased`}>
+        <AuthProvider>
         <div className="mx-wd">
           <Navbar />
           <Level2Nav />
           {children}
         </div>
         <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

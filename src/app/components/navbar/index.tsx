@@ -1,12 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import User from "@/app/components/icons/user";
 import SignIn from "../modals/signin";
 import Subscribe from "../modals/subscribe";
+import { useAuth } from "@/app/contexts/AuthContext";
+
+type User = {
+  id: string;
+  name: string;
+  email: string;
+};
 
 export default function Navbar() {
+    const { user, signOut } = useAuth();
     const [isSignOpen, setIsSignOpen] = useState(false);
     const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
+    const [username, setUsername] = useState<string | null>(null);
+
+    console.log(user, "<User | null>")
+  // On mount, check if user is logged in
+  useEffect(() => {
+    const storedUser = localStorage.getItem("token");
+    console.log(storedUser, "storedUser")
+    if (storedUser) {
+      try {
+      setUsername("User");
+    } catch (err) {
+      console.error("Invalid token", err);
+    }
+}
+  }, [user]);
 
     const openSignModal = ()=> {
         setIsSignOpen(!isSignOpen);
@@ -14,6 +37,12 @@ export default function Navbar() {
     const openSubscribeModal = ()=> {
         setIsSubscribeOpen(!isSubscribeOpen);
     }
+
+    const handleLogout = () => {
+    signOut();
+    setUsername(null);
+  };
+
 
 
     return (
@@ -35,14 +64,15 @@ export default function Navbar() {
         .line:nth-child(3) {width: 18px; }
         .hmbrgr:hover .line {width: 24px; background-color: var(--blue); }
         
-        .sign-lnk {display: flex; justify-content: center; align-items: center; padding: 10px 25px 10px 0; border-radius: 5px; font-size: 18px;  font-weight: 500;}
+        .sign-lnk {display: flex; justify-content: center; align-items: center; padding: 10px 25px 10px 0; border-radius: 5px; font-size: 18px;  font-weight: 500;cursor: pointer;}
         .sign-lnk:hover {color: var(--blue);}
         .subscribe-btn{background: #000; color: #fff; padding: 10px 25px; border-radius: 5px; font-size: 18px;  font-weight: 500;}
+        .subscribe-btn a {cursor: pointer;}
         .comp-name {font-size: 42px; font-weight: 500;}
         .tagline {font-size: 18px;  font-weight: 500; text-align: center;}
         `}</style>
-        {isSignOpen && <SignIn />}
-        {isSubscribeOpen && <Subscribe />}
+        {isSignOpen && <SignIn setIsSignOpen={setIsSignOpen}/>}
+        {isSubscribeOpen && <Subscribe setIsSubscribeOpen= {setIsSubscribeOpen}/>}
         <header className="nav-container">
 
             <div className="nav-left">
@@ -60,14 +90,29 @@ export default function Navbar() {
                 <p className="tagline">All voices matter</p>
             </div>
             <div className="nav-right">
-                <div className="sign-container">
-                    <a className="sign-lnk" onClick={openSignModal}>
-                        <span className="user-ic">
-                            <User />
-                        </span>
-                        Sign In
-                    </a>
-                </div>
+                {username ? (
+            <div className="sign-lnk">
+              <span className="user-ic">
+                <User />
+              </span>
+              {username}
+              <button
+                style={{ marginLeft: "10px", cursor: "pointer" }}
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="sign-container">
+              <a className="sign-lnk" onClick={openSignModal}>
+                <span className="user-ic">
+                  <User />
+                </span>
+                Sign In
+              </a>
+            </div>
+          )}
                 <div className="subscribe-btn" onClick={openSubscribeModal}>
                     <a>Subscribe Now</a>
                 </div>
