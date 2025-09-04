@@ -29,6 +29,10 @@ export default function CategoryListingPage() {
           height: fit-content;
         }
           .mr-cards-container {display: flex; flex-direction: column; justify-content: flex-start; gap: 15px;}
+          @media (max-width: 768px) {
+          .category-listing-container {flex-direction: column; padding: 3px;}
+          .cat-left, .cat-right {width: 100%;}
+          }
       `}</style>
       <div className="category-listing-container">
         <div className="cat-left">

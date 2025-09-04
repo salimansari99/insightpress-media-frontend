@@ -63,7 +63,7 @@ export default function Home() {
             <h3 className="ttl">Breaking News</h3>
             <BreakingCard
               width={300}
-              imgHeight={180}
+              // imgHeight={180}
               image="/images/t1.webp"
               tag="Travel"
               title="Trip to the Mountains"
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="cards">
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -84,7 +84,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -92,7 +92,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -100,7 +100,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -115,7 +115,7 @@ export default function Home() {
             <div className="cards">
               <Card
                 width={300}
-                imgHeight={180}
+                // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -123,7 +123,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -131,7 +131,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -139,7 +139,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -147,7 +147,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -155,7 +155,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -163,7 +163,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -171,7 +171,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -180,7 +180,7 @@ export default function Home() {
 
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -188,7 +188,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -196,7 +196,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -204,7 +204,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -212,7 +212,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -220,7 +220,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -228,7 +228,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"
@@ -236,7 +236,7 @@ export default function Home() {
               />
               <Card
                 width={300}
-                imgHeight={180}
+                // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
                 title="Trip to the Mountains"

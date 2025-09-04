@@ -38,7 +38,7 @@ export default function RootLayout({
         <AuthProvider>
         <div className="mx-wd">
           <Navbar />
-          <Level2Nav />
+          {/* <Level2Nav /> */}
           {children}
         </div>
         <Footer />

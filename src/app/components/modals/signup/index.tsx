@@ -2,32 +2,33 @@
 import React, { useState } from "react";
 import { useAuth } from "@/app/contexts/AuthContext";
 
-type SignInProps = {
-  setIsSignOpen: React.Dispatch<React.SetStateAction<boolean>>;
+type SignUpProps = {
   setIsSignUpOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsSignOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function SignIn({ setIsSignOpen, setIsSignUpOpen }: SignInProps) {
-  const { signIn } = useAuth();
+export default function SignUp({ setIsSignUpOpen, setIsSignOpen }: SignUpProps) {
+  const { signUp } = useAuth();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(""); // clear old error
     try {
-      await signIn(email, password);
-      setIsSignOpen(false); // close signin modal
+      await signUp(username, email, password);
+      setIsSignUpOpen(false);
     } catch (err) {
       setError("Invalid email or password");
     }
   };
 
-  const handleSignup = () => {
-    setIsSignOpen(false);
-    setIsSignUpOpen(true); // ✅ open signup from parent
+  const handleSignin = () => {
+    setIsSignUpOpen(false);
+    setIsSignOpen(true); // ✅ switch back to signin
   };
+
 
   return (
     <>
@@ -42,15 +43,14 @@ export default function SignIn({ setIsSignOpen, setIsSignUpOpen }: SignInProps) 
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 1001;
+          z-index: 1091;
         }
         .modal {
           width: 480px;
-          height: auto;
+          height: 490px;
           background: #f3f3f3;
           padding: 32px;
           position: relative;
-          border-radius: 8px;
         }
         .cls-btn {
           position: absolute;
@@ -83,13 +83,12 @@ export default function SignIn({ setIsSignOpen, setIsSignUpOpen }: SignInProps) 
           background-color: var(--blue);
           color: var(--white);
           font-size: 18px;
-          cursor: pointer;
         }
-        .signup {
+        .signin {
           text-align: center;
           margin-top: 12px;
         }
-        .signup button {
+        .signin button {
           color: var(--blue);
           background: none;
           border: none;
@@ -99,50 +98,42 @@ export default function SignIn({ setIsSignOpen, setIsSignUpOpen }: SignInProps) 
       `}</style>
       <div className="modal-overlay">
         <div className="modal">
-          <span className="cls-btn" onClick={() => setIsSignOpen(false)}>
-            ✕
+          <span className="cls-btn" onClick={() => setIsSignUpOpen(false)}>
+            X
           </span>
-
           {error && <p className="text-red-500 mb-2">{error}</p>}
-
-          <form onSubmit={handleSubmit}>
-            <div className="field">
-              <label htmlFor="email">Email Address</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="field">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                placeholder="Enter password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-
-            <button type="submit" className="login">
-              Log In
-            </button>
-          </form>
-
+          <div className="field">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              placeholder="User name"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="username">Email Address</label>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button onClick={handleSubmit} className="login">
+            Sign Up
+          </button>
           <hr />
-
-          <p className="signup">
-            Don’t have an account?{" "}
-            <button type="button" onClick={handleSignup}>
-              Sign Up
-            </button>
-          </p>
+          <p className="signin">Already have an account? <button onClick={handleSignin}>Sign In</button></p>
         </div>
       </div>
     </>

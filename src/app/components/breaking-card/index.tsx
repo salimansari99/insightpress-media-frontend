@@ -30,6 +30,9 @@ const BreakingCard: React.FC<CardProps> = ({
         .ar-tg {background-color: var(--black);color: #fff;font-size: 16px; padding: 5px 10px; border-radius: 3px;}
         .ar-ttl {margin-block: 20px;font-size: 20px;}
         .published-dt {font-size: 14px;}
+        @media (max-width: 768px) {
+        .br-img {width: 100%; height: 394px;}
+        }
         
         `}</style>
         <div className="breaking-container">

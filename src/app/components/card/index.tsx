@@ -1,8 +1,7 @@
 import React from "react";
 
 type CardProps = {
-  width?: number; // Optional, fallback width
-  imgHeight?: number; // Optional, fallback height
+  width?: number;
   image: string;
   tag?: string;
   title: string;
@@ -12,7 +11,6 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({
   width = 310,
-  imgHeight = 225,
   image,
   tag,
   title,
@@ -29,7 +27,14 @@ const Card: React.FC<CardProps> = ({
           display: flex;
           flex-direction: column;
           background: #f3f3f3;
-          border-radius: 3px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s ease;
+        }
+
+        .card-container:hover {
+          transform: translateY(-4px);
         }
 
         .card-top {
@@ -37,7 +42,6 @@ const Card: React.FC<CardProps> = ({
           aspect-ratio: 16 / 9;
           position: relative;
           overflow: hidden;
-          border-radius: 3px;
         }
 
         .card-img {
@@ -47,40 +51,75 @@ const Card: React.FC<CardProps> = ({
           transition: transform 0.5s ease;
         }
 
-        .card-img:hover {
+        .card-top:hover .card-img {
           transform: scale(1.05);
         }
 
         .tag {
           position: absolute;
-          bottom: 0;
-          margin: 15px;
-          background: #000;
-          padding: 5px 10px;
-          font-size: 14px;
+          bottom: 10px;
+          left: 10px;
+          background: rgba(0, 0, 0, 0.7);
+          padding: 5px 12px;
+          font-size: 0.85rem;
           border-radius: 5px;
           color: white;
         }
 
         .card-bottom {
-          padding: 10px;
+          padding: 12px 14px;
         }
 
         .headline {
           color: #000;
-          font-size: 1rem;
+          font-size: 1.1rem;
           font-weight: 700;
-          margin: 12px 0 6px 0;
+          margin: 10px 0 6px 0;
+          line-height: 1.3;
         }
 
         .desc {
-          color: #000;
-          font-size: 0.9rem;
+          color: #333;
+          font-size: 0.95rem;
+          line-height: 1.4;
         }
 
+        /* Tablet adjustments */
+        @media (max-width: 1024px) {
+          .card-container {
+            max-width: 90%;
+          }
+        }
+
+        /* Mobile adjustments */
         @media (max-width: 768px) {
           .card-container {
             max-width: 100%;
+            border-radius: 6px;
+          }
+
+          .headline {
+            font-size: 1rem;
+          }
+
+          .desc {
+            font-size: 0.85rem;
+          }
+
+          .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+          }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+          .headline {
+            font-size: 0.95rem;
+          }
+
+          .desc {
+            font-size: 0.8rem;
           }
         }
       `}</style>
@@ -92,7 +131,7 @@ const Card: React.FC<CardProps> = ({
         </div>
         <div className="card-bottom">
           <h3 className="headline">{title}</h3>
-          <p className="desc">{description}</p>
+          {description && <p className="desc">{description}</p>}
         </div>
       </div>
     </>

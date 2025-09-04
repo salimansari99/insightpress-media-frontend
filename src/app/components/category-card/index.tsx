@@ -20,6 +20,10 @@ export default function CategoryCard() {
         .auth-img {width: 28px; height: 28px; border-radius: 100%;}
         .p-dt {font-size: 14px;}
 
+        @media (max-width: 768px) {
+        .categorycard-container {width: 100%;}
+        }
+
         `}</style>
         <div className="categorycard-container">
             <p className="brdcrmb">IN SCIENCE / READ TIME3 MINS</p>
