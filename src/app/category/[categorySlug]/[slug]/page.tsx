@@ -34,7 +34,7 @@ export default function ArticleConsumption() {
                 <div className="br-card">
                     <BreakingCard 
                 width={300}
-              imgHeight={180}
+              // imgHeight={180}
               image="/images/t1.webp"
               tag="Travel"
               title="Trip to the Mountains"

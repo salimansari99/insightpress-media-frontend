@@ -48,7 +48,7 @@ export default function CategoryListingPage() {
         <div className="cat-right">
           <BreakingCard
             width={300}
-            imgHeight={180}
+            // imgHeight={180}
             image="/images/t1.webp"
             tag="Travel"
             title="Trip to the Mountains"

@@ -109,7 +109,7 @@ export default function HeroSection() {
                   <Card
                     key={i}
                     width={300}
-                    imgHeight={180}
+                    // imgHeight={180}
                     image="/images/t1.webp"
                     title="Trip to the Mountains  Lorem ipsum dolor sit amet consectetur adipisicing."
                   />
