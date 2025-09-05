@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <>
       <style jsx global>{`
+      .main-container {padding: 5px;}
         .custom-card {
           border: 2px solid red;
           transition: box-shadow 0.3s ease;
@@ -53,16 +54,22 @@ export default function Home() {
     align-items: center;
     gap: 20px}
 
+    @media (max-width: 768px) {
+    
+    .br-news {flex-direction: column;}
+    .br-l, .br-r {width: 100%;}
+    .ed-choice {flex-direction: column;}
+    .ed-l, .ed-r {width :100%;}
+    }
+
       `}</style>
       <div className="main-container">
-        {/* <Navbar />
-        <Level2Nav /> */}
         <HeroSection />
         <section className="br-news">
           <div className="br-l">
             <h3 className="ttl">Breaking News</h3>
             <BreakingCard
-              width={300}
+              width={30}
               // imgHeight={180}
               image="/images/t1.webp"
               tag="Travel"
@@ -74,7 +81,7 @@ export default function Home() {
             <h3 className="ttl">Popular Now</h3>
             <div className="cards">
               <Card
-                width={300}
+                width={48}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -83,7 +90,7 @@ export default function Home() {
                 
               />
               <Card
-                width={300}
+                width={48}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -91,7 +98,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature.  Lorem ipsum dolor sit amet consectetur adipisicing."
               />
               <Card
-                width={300}
+                width={48}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -99,7 +106,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature.  Lorem ipsum dolor sit amet consectetur adipisicing."
               />
               <Card
-                width={300}
+                width={48}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -114,7 +121,7 @@ export default function Home() {
             <h3 className="ttl">Editor Choice</h3>
             <div className="cards">
               <Card
-                width={300}
+                width={30}
                 // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -122,7 +129,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -130,7 +137,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -138,7 +145,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -146,7 +153,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -154,7 +161,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -162,7 +169,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -170,7 +177,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -179,7 +186,7 @@ export default function Home() {
               />
 
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -187,7 +194,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -195,7 +202,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -203,7 +210,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -211,7 +218,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -219,7 +226,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -227,7 +234,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"
@@ -235,7 +242,7 @@ export default function Home() {
                 description="Explore the scenic views and unwind in nature."
               />
               <Card
-                width={300}
+                width={30}
                 // imgHeight={180}
                 image="/images/t1.webp"
                 tag="Travel"

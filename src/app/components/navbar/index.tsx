@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import UserIcon from "@/app/components/icons/user"; // ✅ renamed to avoid clash
 import SignIn from "../modals/signin";
@@ -49,8 +50,11 @@ export default function Navbar() {
         
 
         <div className="nav-mid">
+          <Link href="/">
           <h1 className="comp-name">Insight Press</h1>
           <p className="tagline">All voices matter</p>
+          </Link>
+          
         </div>
 
         <div className="nav-right">

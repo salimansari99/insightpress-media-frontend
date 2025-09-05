@@ -7,31 +7,23 @@ export default function HeroSection() {
       <style jsx>{`
         .hero-section {
           display: flex;
-          flex-wrap: wrap;
           justify-content: space-between;
           margin-block: 80px;
           // background: url('/images/home-hero-image.webp') no-repeat fixed;
         }
 
         .h-l {
-          width: 100%;
+          width: 60%;
         }
 
         .h-r {
-          width: 100%;
+          width: 40%;
         }
 
-        @media (min-width: 768px) {
-          .h-l {
-            width: 62%;
-          }
-
-          .h-r {
-            width: 34%;
-          }
-        }
+        
 
         .l-top {
+        width: 90%;
           margin-bottom: 24px;
         }
 
@@ -79,11 +71,21 @@ export default function HeroSection() {
         }
 
         .br-cards {
+        width: 100%;
           display: flex;
           flex-direction: column;
           gap: 20px;
           height: 540px;
           overflow: auto;
+        }
+
+        @media (max-width: 768px) {
+        .l-top {width: 100%;}
+        .hero-section {
+        flex-direction: column;
+        }
+        .h-l, .h-r {width: 100%;}
+        .trending-cards {width: 100%; flex-direction: column;}
         }
       `}</style>
 
@@ -108,7 +110,7 @@ export default function HeroSection() {
                 .map((_, i) => (
                   <Card
                     key={i}
-                    width={300}
+                    width={30}
                     // imgHeight={180}
                     image="/images/t1.webp"
                     title="Trip to the Mountains  Lorem ipsum dolor sit amet consectetur adipisicing."

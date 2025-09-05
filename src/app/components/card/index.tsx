@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({
       <style jsx>{`
         .card-container {
           width: 100%;
-          max-width: ${width}px;
+          max-width: ${width}%;
           min-height: 280px;
           display: flex;
           flex-direction: column;
